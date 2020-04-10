@@ -158,36 +158,28 @@ object MainForm: TMainForm
         ParentColor = False
       end
     end
-    object lblDevice: TLabel
-      Left = 16
-      Height = 15
-      Top = 8
-      Width = 38
-      Caption = 'Device:'
-      ParentColor = False
-    end
     object device_box: TComboBox
-      Left = 16
+      Left = 8
       Height = 23
-      Top = 32
+      Top = 0
       Width = 168
       ItemHeight = 15
       TabOrder = 1
       Text = 'device_box'
     end
     object setDeviceBtn: TButton
-      Left = 16
-      Height = 26
-      Top = 57
+      Left = 9
+      Height = 56
+      Top = 24
       Width = 88
       Caption = 'Read'
       OnClick = setDeviceBtnClick
       TabOrder = 2
     end
     object refreshBtn: TButton
-      Left = 104
-      Height = 26
-      Top = 57
+      Left = 96
+      Height = 56
+      Top = 24
       Width = 80
       Caption = 'Refresh'
       OnClick = refreshBtnClick

@@ -37,7 +37,6 @@ type
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     GroupBox3: TGroupBox;
-    lblDevice: TLabel;
     StatusBar1: TStatusBar;
     ToolBar1: TToolBar;
     ToolButton1: TToolButton;
@@ -194,11 +193,18 @@ begin
     Dir := SaveDlg.FileName
   else
     exit;
-  OtherControlsOnOff(False);
+  //OtherControlsOnOff(False);
+  MainForm.Enabled:=false;
   Extractor := TExtractor.Create(@InfoPanel);
+  try
   Extractor.DoWork;
-  Extractor.Free;
-  OtherControlsOnOff(True);
+
+  finally
+    Extractor.Free;
+  end;
+
+  //OtherControlsOnOff(True);
+  MainForm.Enabled:=true;
 end;
 
 procedure TMainForm.ToolButton7Click(Sender: TObject);
